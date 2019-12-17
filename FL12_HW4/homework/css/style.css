@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: 'Merriweather', serif; }
+
+.header {
+  height: 100vh; }
+
+.nav-bar {
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 9.7vh;
+  padding: 0 18.3vw; }
+  @media (max-width: 1013px) {
+    .nav-bar {
+      padding: 0 10vw; } }
+  @media (max-width: 868px) {
+    .nav-bar {
+      padding: 0 8vw; } }
+  @media (max-width: 764px) {
+    .nav-bar {
+      padding: 0 2vw; } }
+  .nav-bar_title {
+    align-self: center;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #777; }
+  .nav-bar_nav ul {
+    display: flex;
+    height: 100%;
+    list-style: none; }
+  .nav-bar_nav_item {
+    display: flex;
+    height: 100%;
+    margin-left: 45px;
+    align-items: center;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    color: #777;
+    transition: all .2s ease; }
+    .nav-bar_nav_item:hover {
+      color: #bfba55; }
+
+.hero-section {
+  z-index: -1;
+  display: flex;
+  height: 100%;
+  flex-direction: column; }
+  .hero-section-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    height: 100%;
+    background: url("../img/home-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center 9.7vh;
+    background-size: cover;
+    filter: brightness(0.3); }
+  .hero-section-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff; }
+  .hero-section_heading {
+    margin-top: 150px;
+    font-size: 65px;
+    font-weight: bold; }
+    @media (max-width: 943px) {
+      .hero-section_heading {
+        font-size: 55px; } }
+    @media (max-width: 871px) {
+      .hero-section_heading {
+        font-size: 45px; } }
+  .hero-section_text {
+    margin-top: 20px;
+    margin-bottom: 55px;
+    font-size: 12px;
+    letter-spacing: 2.2px;
+    color: #bfba55; }
+  .hero-section_button {
+    padding: 17px 22px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    letter-spacing: 1.5px; }
+    .hero-section_button:hover {
+      cursor: pointer; }
+
+.blog-wrap, .footer-wrap {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 12.7vh; }
+  @media (max-width: 1100px) {
+    .blog-wrap, .footer-wrap {
+      width: 90%; } }
+
+.blog {
+  margin-top: 10vh; }
+  .blog_image {
+    width: 100%; }
+  .blog_separator {
+    border-color: #f0f0f0;
+    border-width: 0.5px; }
+
+.blog-content {
+  margin-top: 3.8vh;
+  margin-bottom: 7vh; }
+  .blog-content_title {
+    font-size: 28px;
+    letter-spacing: 0.2px;
+    word-spacing: -1px; }
+  .blog-content_text {
+    margin-top: 2.55vh;
+    font-size: 15px;
+    color: #777;
+    font-weight: lighter;
+    line-height: 1.8;
+    word-spacing: -1.3px;
+    letter-spacing: 0.5px; }
+  .blog-content_button {
+    margin-top: 4.1vh;
+    padding: 16px 28px;
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    border: 1px solid #cccccc;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    color: #777; }
+    .blog-content_button:hover {
+      cursor: pointer; }
+
+.blog-content_autor {
+  margin-top: 1.1vh;
+  display: flex;
+  align-items: center;
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-size: 18px;
+  color: #777; }
+  .blog-content_autor_image {
+    width: 45px;
+    border-radius: 50%; }
+  .blog-content_autor_name {
+    margin-left: 10px; }
+  .blog-content_autor_date {
+    margin-left: 20px; }
+  .blog-content_autor_comments {
+    margin-left: 32px; }
+
+.footer {
+  display: flex;
+  margin-top: 12.6vh;
+  height: 40.5vh;
+  background-color: #000000;
+  color: #ffffff; }
+  .footer-wrap {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    justify-content: space-between; }
+    @media (max-width: 1100px) {
+      .footer-wrap {
+        width: 90%; } }
+
+.company {
+  width: 46%; }
+  .company_title, .contacts_title {
+    font-size: 28px;
+    font-weight: bold; }
+  .company_text, .contacts_text {
+    margin-top: 1.7vh;
+    font-size: 15px;
+    color: #777;
+    line-height: 1.8;
+    word-spacing: 1px; }
+
+.contacts {
+  width: 38%;
+  display: flex;
+  flex-direction: column; }
+  .contacts_text {
+    margin-top: 1.3vh;
+    text-decoration: none; }
