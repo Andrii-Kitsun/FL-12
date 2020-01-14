@@ -132,16 +132,7 @@ console.log(getArrayOfKeys(actors, 'name'));
 
 // 8 function
 const substitute = arr => {
-  let result = arr;
-  let less = mapArray(result, elem => elem < thirty);
-
-  for (let i = 0; i < result.length; i++) {
-    if (less[i]) {
-      result[i] = '*';
-    }
-  }
-
-  return result;
+  return mapArray(arr, elem => elem > thirty ? elem : '*');
 };
 
 console.log(substitute([fiftyeight, fourteen, fortyeight, two, thirtyone, twentynine]));
