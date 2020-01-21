@@ -9,25 +9,25 @@ function Fighter(fighter) {
   this.getAgility = () => fighter.agility;
   this.getHealth = () => fighter.hp;
 
-  this.attack = (defender) => {
-    const hundred = 100;
-    const chanceToHit = hundred - (defender.getStrength() + defender.getAgility());
-    const rand = Math.random() * hundred;
+  this.attack = defender => {
+    const MAX_CHANCE = 100;
+    const HIT_CHANCE = MAX_CHANCE - (defender.getStrength() + defender.getAgility());
+    const RAND = Math.random() * MAX_CHANCE;
 
-    if (chanceToHit > rand) {
+    if (HIT_CHANCE > RAND) {
       console.log(`${fighter.name} makes ${fighter.damage} damage to ${defender.getName()}`);
       defender.dealDamage(fighter.damage);
     } else {
       console.log(`${fighter.name} attack missed`);
     }
   };
-  this.dealDamage = (damage) => {
+  this.dealDamage = damage => {
     fighter.hp -= damage;
     if (fighter.hp < 0) {
       fighter.hp = 0;
     }
   };
-  this.heal = (healPoints) => {
+  this.heal = healPoints => {
     fighter.hp += healPoints;
     if (fighter.hp > fighter.startHP) {
       fighter.hp = fighter.startHP;
@@ -72,3 +72,6 @@ function battle(fighter1, fighter2) {
     }
   }
 }
+
+const myFighter = new Fighter({name: 'Maximus', damage: 20, strength: 20, agility: 15, hp: 100});
+const myFighter2 = new Fighter({name: 'Commodus', damage: 25, strength: 25, agility: 20, hp: 90});
