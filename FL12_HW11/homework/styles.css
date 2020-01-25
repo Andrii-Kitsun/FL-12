@@ -1,0 +1,31 @@
+ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.material-icons {
+  font-size: 18px !important;
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+.tree-node {
+  margin: 5px 0;
+}
+
+.folder-icon {
+  color: #eebd03;
+}
+
+.file-icon {
+  color: #bcbcbc;
+}
+
+.tree-node:hover {
+  background-color: #eff0f0;
+  cursor: pointer;
+}
+
+.empty-folder:hover {
+  cursor: pointer;
+}
