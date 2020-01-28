@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 12 - Simple TODO List</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div id="root">
+    <section id="main" class="page">
+      <div class="wrapper">
+        <a href="#/add" class="button">Add new</a>
+      </div>
+      
+      <h2>List of sets</h2>
+
+      <div class="sets">
+        <div class="set" id="1">
+          <span class="set-content">HTML - HyperText Markup Language</span>
+          <input type="checkbox" class="set-checkbox">
+          <a href="#/modify/1" class="button edit-button">Edit</a>
+          <button class="button remove-button">Remove</button>
+        </div>
+
+        <div class="set" id="2">
+          <span class="set-content">CSS - Cascading Style Sheets</span>
+          <input type="checkbox" class="set-checkbox">
+          <a href="#/modify/2" class="button edit-button">Edit</a>
+          <button class="button remove-button">Remove</button>
+        </div>
+
+        <div class="set" id="3">
+          <span class="set-content">JS - JavaScript</span>
+          <input type="checkbox" class="set-checkbox">
+          <a href="#/modify/3" class="button edit-button">Edit</a>
+          <button class="button remove-button">Remove</button>
+        </div>
+
+        <div class="set" id="4">
+          <span class="set-content">DOM - Document Object Model</span>
+          <input type="checkbox" class="set-checkbox">
+          <a href="#/modify/4" class="button edit-button">Edit</a>
+          <button class="button remove-button">Remove</button>
+        </div>
+
+        <div class="set" id="5">
+          <span class="set-content">BOM - Browser Object Model</span>
+          <input type="checkbox" class="set-checkbox">
+          <a href="#/modify/5" class="button edit-button">Edit</a>
+          <button class="button remove-button">Remove</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="add" class="page">
+      <div class="wrapper">
+        <button class="button">Add terms</button>
+        <a href="#" class="button">Cancel</a>
+      </div>
+
+      <h2>Add more sets</h2>
+      
+      <form id="add-form" class="form">
+        <div class="form-field">
+          <input type="text" class="form-input" placeholder="Enter term" required>
+          <input type="text" class="form-input" placeholder="Enter definition">
+          <button class="button remove-button">Remove</button>
+        </div>
+
+        <button type="submit" class="button">Save changes</button>
+      </form>
+    </section>
+    
+    <section id="modify" class="page">
+      <h2>Modify exist set</h2>
+      
+      <form id="modify-form" class="form">
+        <div class="form-field">
+          <input type="text" class="form-input" placeholder="Enter term" required>
+          <input type="text" class="form-input" placeholder="Enter definition">
+        </div>
+
+        <a href="#" class="button">Cancel</a>
+        <button class="button">Save changes</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+a {
+  text-decoration: none;
+  color: #000000;
+  font-family: sans-serif;
+}
+
+body {
+  max-width: 95%;
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.wrapper .button {
+  margin-left: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid lightskyblue;
+  border-radius: 15px;
+  outline: none;
+  font-size: 16px;
+  transition: all 400ms;
+}
+
+.button:hover {
+  background-color: lightskyblue;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 32px;
+  margin: 0;
+}
+
+.sets {
+  border: 2px solid lightskyblue;
+  border-radius: 15px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.set {
+  border: 1px dashed lightgrey;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.set-content {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin-right: auto;
+}
+
+.set-checkbox {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+
+.edit-button {
+  border: 2px solid green;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.edit-button:hover {
+  background-color: green;
+  color: #fff;
+}
+
+.remove-button {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+.remove-button:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.form {
+  border: 2px solid lightskyblue;
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: right;
+}
+
+.form-field {
+  border: 1px dashed lightgrey;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.form-input {
+  font-size: 20px;
+  margin-right: 20px;
+  width: 44%;
+}
+
+
+.form-field .remove-button {
+  margin-left: auto;
+  padding: 5px 20px;
+}
