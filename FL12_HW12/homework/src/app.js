@@ -152,8 +152,7 @@ document.querySelectorAll('.edit-button').forEach(edit => {
 
 document.querySelector('#add-form').addEventListener('submit', (e) => {
   const sets = getSets();
-  let id = +sets[sets.length - 1].id + 1;
-
+  let id = sets.length ? sets.length + 1 : 1;
   const fields = e.target.parentNode.querySelectorAll('.form-input');
   const two = 2;
 
@@ -199,6 +198,10 @@ const writeLocalStorage = () => {
 }
 
 const loadLocalStorage = () => {
+  if (!localStorage.length) {
+    return;
+  }
+
   document.querySelector('.sets').remove();
   const div = document.createElement('div');
   div.className = 'sets';
