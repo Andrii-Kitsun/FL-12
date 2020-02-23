@@ -1,5 +1,5 @@
 class Employee {
-  static _EPLOYEES = [];
+  static _EMPLOYEES = [];
 
   constructor(employee) {
     this.id = employee.id;
@@ -10,7 +10,7 @@ class Employee {
     this.position = employee.position;
     this.departament = employee.departament;
 
-    Employee._EPLOYEES.push(this);
+    Employee._EMPLOYEES.push(this);
   }
 
   get age() {
@@ -24,14 +24,14 @@ class Employee {
     return `${employee.firstName} ${employee.lastName}`;
   }
 
-  get EPLOYEES() {
-    return Employee._EPLOYEES;
+  get EMPLOYEES() {
+    return Employee._EMPLOYEES;
   }
 
   quit() {
-    const index = Employee._EPLOYEES.indexOf(this);
+    const index = Employee._EMPLOYEES.indexOf(this);
     if (index !== -1) {
-      Employee._EPLOYEES.splice(index, 1);
+      Employee._EMPLOYEES.splice(index, 1);
     }
   }
 
@@ -91,30 +91,40 @@ class Employee {
 }
 
 class Manager extends Employee {
+  constructor(employee) {
+    super(employee);
+    this.position = 'manager';
+  }
 
+  get managedEmployees() {
+    const managed = [];
+
+    Employee._EMPLOYEES.forEach(employee => {
+      if (employee.departament === this.departament && employee.position !== 'manager') {
+        managed.push(employee);
+      }
+    });
+
+    return managed;
+  }
 }
 
-class BlueCollarWorker extends Employee {
-
-}
+class BlueCollarWorker extends Employee {}
 
 class HRManager extends Manager {
-
+  constructor(employee) {
+    super(employee);
+    this.departament = 'hr';
+  }
 }
 
 class SalesManager extends Manager {
-
+  constructor(employee) {
+    super(employee);
+    this.departament = 'sales';
+  }
 }
 
-//Tests
-const employee = new Employee({
-  id: 1,
-  firstName: 'John',
-  lastName: 'Doe',
-  birthday: '11/19/1999',
-  salary: '500$',
-  position: 'Employee',
-  departament: 'Epam'
-});
-
-console.log('employee: ', employee);
+function ManagerPro(manager, benefits) {
+  Object.assign(manager, benefits);
+}
