@@ -65,6 +65,7 @@ const getUsers = () => {
     .then(response => response.json())
     .then(users => {
       showUsers(users);
+      console.log("users: ", users);
       addListeners();
       document.querySelector(".spinner").classList.toggle("hidden");
     })
@@ -93,18 +94,58 @@ const deleteUser = e => {
 
 const editUser = e => {
   const card = e.target.parentElement.parentElement;
-  console.log("card: ", card);
-
   const form = document.forms.editForm;
 
+  form.id.value = card.id;
   form.name.value = card.querySelector(".card__info-name").textContent;
   form.username.value = card.querySelector(".card__info-username").textContent;
   form.company.value = card.querySelector(".card__company-name").textContent;
   form.address.value = card.querySelector(".card__address-address").textContent;
   form.email.value = card.querySelector(".card__contacts-email").textContent;
   form.phone.value = card.querySelector(".card__contacts-phone").textContent;
-  form.website.value = card.querySelector(".card__contacts-website").textContent;
+  form.website.value = card.querySelector(
+    ".card__contacts-website"
+  ).textContent;
 };
+
+document.querySelector(".form__close").addEventListener("click", () => {
+  document.forms.editForm.classList.toggle("hidden");
+});
+
+document.querySelector(".form__save").addEventListener("click", e => {
+  e.preventDefault();
+  const form = document.forms.editForm;
+  const id = form.id.value;
+  const card = document.getElementById(id);
+  document.querySelector(".spinner").classList.toggle("hidden");
+
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      id: id,
+      name: form.name.value,
+      username: form.username.value,
+      company: form.company.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      website: form.website.value
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  }).then(() => {
+    document.querySelector(".spinner").classList.toggle("hidden");
+  });
+
+  card.querySelector(".card__info-name").textContent = form.name.value;
+  card.querySelector(".card__info-username").textContent = form.username.value;
+  card.querySelector(".card__company-name").textContent = form.company.value;
+  card.querySelector(".card__address-address").textContent = form.address.value;
+  card.querySelector(".card__contacts-email").textContent = form.email.value;
+  card.querySelector(".card__contacts-phone").textContent = form.phone.value;
+  card.querySelector(".card__contacts-website").textContent =
+    form.website.value;
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   getUsers();
