@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webinar Homework 5</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h2 class="header__title">Testing JSONPlaceholder API</h2>
+    </header>
+
+    <main class="main">
+      <div class="lds-default spinner hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <h1 class="main__title">List of users in database</h1>
+
+      <section class="main__content">
+        <h3 class="error hidden">Connection error. Please refresh the page.</h3>
+      </section>
+
+      <form action="#" class="form" name="editForm">
+        <label for="name">Name:</label>
+        <input type="text" class="form__name" id="name" name="name" />
+
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          class="form__username"
+          id="username"
+          name="username"
+        />
+
+        <label for="company">Company:</label>
+        <input type="text" class="form__company" id="company" name="company" />
+
+        <label for="address">Address:</label>
+        <input type="text" class="form__address" id="address" name="address" />
+
+        <label for="email">Email:</label>
+        <input type="text" class="form__email" id="email" name="email" />
+
+        <label for="phone">Phone:</label>
+        <input type="text" class="form__phone" id="phone" name="phone" />
+
+        <label for="website">Website:</label>
+        <input type="text" class="form__website" id="website" name="website" />
+
+        <div class="form__button">
+          <button class="form__save form__btn">Save</button>
+          <button class="form__close form__btn">Close</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <h2 class="header__title">&copy; Epam Front-end lab, 2020</h2>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
