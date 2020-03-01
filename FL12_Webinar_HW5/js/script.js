@@ -15,7 +15,7 @@ const createCard = user => {
   card.id = id;
   card.innerHTML = `
     <div class="card__info">
-      <span class="card__info-name">${name}</span>
+      <a href="./posts.html#${id}" target="_blank" class="card__info-name">${name}</a>
       <span class="card__info-username">${username}</span>
     </div>
 
@@ -65,7 +65,6 @@ const getUsers = () => {
     .then(response => response.json())
     .then(users => {
       showUsers(users);
-      console.log("users: ", users);
       addListeners();
       document.querySelector(".spinner").classList.toggle("hidden");
     })
@@ -89,12 +88,14 @@ const deleteUser = e => {
   }).then(() => {
     card.remove();
     document.querySelector(".spinner").classList.toggle("hidden");
-  });
+  })
+  .catch(error => console.error(error));
 };
 
 const editUser = e => {
   const card = e.target.parentElement.parentElement;
   const form = document.forms.editForm;
+  form.classList.toggle("hidden");
 
   form.id.value = card.id;
   form.name.value = card.querySelector(".card__info-name").textContent;
@@ -108,7 +109,8 @@ const editUser = e => {
   ).textContent;
 };
 
-document.querySelector(".form__close").addEventListener("click", () => {
+document.querySelector(".form__close").addEventListener("click", e => {
+  e.preventDefault();
   document.forms.editForm.classList.toggle("hidden");
 });
 
@@ -135,7 +137,9 @@ document.querySelector(".form__save").addEventListener("click", e => {
     }
   }).then(() => {
     document.querySelector(".spinner").classList.toggle("hidden");
-  });
+    document.forms.editForm.classList.toggle("hidden");
+  })
+  .catch(error => console.error(error));
 
   card.querySelector(".card__info-name").textContent = form.name.value;
   card.querySelector(".card__info-username").textContent = form.username.value;
@@ -147,6 +151,4 @@ document.querySelector(".form__save").addEventListener("click", e => {
     form.website.value;
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  getUsers();
-});
+document.addEventListener("DOMContentLoaded", getUsers);

@@ -20,7 +20,8 @@ body {
   margin: 0;
 }
 
-.header, .footer {
+.header,
+.footer {
   background-color: $header;
 
   &__title {
@@ -63,7 +64,7 @@ body {
 }
 
 .hidden {
-  display: none!important;
+  display: none !important;
 }
 
 .card {
@@ -82,12 +83,13 @@ body {
   &__info {
     font-size: 20px;
     text-align: center;
-    
+
     &-name {
-      font-size: 26px;
       display: block;
+      font-size: 26px;
+      color: black;
     }
-    
+
     &-username {
       font-weight: 300;
       font-style: italic;
@@ -102,7 +104,8 @@ body {
       display: block;
     }
 
-    &-phrase, &-bs {
+    &-phrase,
+    &-bs {
       display: block;
       font-size: 16px;
       margin-left: 2px;
@@ -125,7 +128,8 @@ body {
   &__contacts {
     @include secondaryCardContent();
 
-    &-phone, &-website {
+    &-phone,
+    &-website {
       display: block;
     }
   }
@@ -133,7 +137,8 @@ body {
   &__button {
     text-align: right;
 
-    &-edit, &-delete {
+    &-edit,
+    &-delete {
       border: 2px solid $editButton;
       margin-right: 15px;
       @include button();
@@ -157,13 +162,21 @@ body {
 }
 
 .form {
-  display: inline-block;
   text-align: start;
   border: 2px solid $editButton;
   padding: 10px;
   border-radius: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 400px;
+  width: 250px;
+  background-color: $cardBorder;
 
   input {
     display: block;
@@ -186,8 +199,57 @@ body {
   &__save {
     border: 1px solid $editButton;
   }
-  
+
   &__close {
     border: 1px solid $deleteButton;
   }
+}
+
+.wrapper {
+  display: block;
+}
+
+.posts {
+  margin: 20px;
+  padding: 10px;
+  border: 1px dashed $cardBorder;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__body {
+    margin-left: 10px;
+  }
+}
+
+.comment {
+  margin: 20px;
+  padding: 10px;
+  border: 1px dashed $cardBorder;
+  border-radius: 10px;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  &__email {
+    margin-left: 5px;
+    font-style: italic;
+    color: $secondaryField;
+  }
+}
+
+.ref {
+  text-decoration: none;
+  display: block;
+  font-size: 19.5px;
 }
